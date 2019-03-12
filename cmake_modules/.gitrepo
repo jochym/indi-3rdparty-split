@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = git@github.com:jochym/indi-cmake.git
+	branch = master
+	commit = 55f4dd0c907ee61600aa28bae9f7df8f5c1b1ca6
+	parent = d78c6465a2ea4ea537de8958bb19dbe91fb3694c
+	method = merge
+	cmdver = 0.4.0
