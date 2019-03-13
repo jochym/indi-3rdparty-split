@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = git@github.com:jochym/indi-CI.git
+	branch = master
+	commit = ae9c58b8d41375eabe607f9ac1edeec06251be45
+	parent = 9564d226c2815f025c2743d32753abf70a3aaebb
+	method = merge
+	cmdver = 0.4.0
