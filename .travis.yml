@@ -1,9 +1,5 @@
 services:
   - docker
 
-before_install:
-  - docker pull jochym/indi-bionic
-  - docker ps -a
-
 script:
-  - docker run --rm -it jochym/indi-centos ./run-build.sh indilib master
+  - docker run --rm -it jochym/indi-bionic ./run-build.sh indilib master
