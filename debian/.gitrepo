@@ -1,0 +1,12 @@
+; DO NOT EDIT (unless you know what you are doing)
+;
+; This subdirectory is a git "subrepo", and this file is maintained by the
+; git-subrepo command. See https://github.com/git-commands/git-subrepo#readme
+;
+[subrepo]
+	remote = git@github.com:jochym/indi-debian.git
+	branch = master
+	commit = f22f44cd2a678e3862f63fed086f6a1c9d7af813
+	parent = 011e09036ac703191980f2c7c52b3fa0205fa547
+	method = merge
+	cmdver = 0.4.0
