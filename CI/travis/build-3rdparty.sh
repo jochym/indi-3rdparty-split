@@ -21,7 +21,7 @@ else
     echo "Building all 3rd party drivers"
     mkdir -p build/3rdparty
     pushd build/3rdparty
-    cmake -DCMAKE_INSTALL_PREFIX=/usr/local/ . ../../3rdparty/ -DFIX_WARNINGS=ON -DCMAKE_BUILD_TYPE=$1
+    cmake -DCMAKE_INSTALL_PREFIX=/usr/local/ . ../../drivers/ -DFIX_WARNINGS=ON -DCMAKE_BUILD_TYPE=$1
     make
     popd
 fi

@@ -3,7 +3,7 @@
 # This is a script building libraries for travis-ci
 # It is *not* for general audience
 
-SRC=../../3rdparty/
+SRC=../../libs/
 
 if [ ${TRAVIS_OS_NAME} == "linux" ] ; then
     LIBS="libapogee libfishcamp libfli libqhy libqsi libsbig libinovasdk libdspau"
@@ -13,7 +13,7 @@ fi
 
 if [ .${TRAVIS_BRANCH%_*} == '.drv' ] ; then
     DRV=lib"${TRAVIS_BRANCH#drv_}"
-    if [ -d 3rdparty/$DRV ] ; then
+    if [ -d drivers/$DRV ] ; then
         LIBS="$DRV"
     else
         LIBS=""
