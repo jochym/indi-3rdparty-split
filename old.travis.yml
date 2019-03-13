@@ -1,0 +1,43 @@
+compiler:
+ - gcc
+
+language: cpp
+sudo: required
+dist: xenial
+osx_image: xcode8.3
+
+matrix:
+  include:
+    - os: osx
+      env:
+        - BUILD_INSTALL_GTEST=YES
+    
+    - os: linux
+
+branches:
+  only:
+    - master
+    - develop
+    - package
+    - /drv_.*$/
+    - travis
+    - refactor/unittest
+    - feature/travisosx
+
+before_install:
+    - echo Install dependencies
+    - CI/travis/deps-${TRAVIS_OS_NAME}.sh
+    - CI/travis/deps-${TRAVIS_OS_NAME}-libindi.sh
+
+install:
+    - echo Building 3rd party INDI drivers
+    - CI/travis/build-3rdparty.sh
+#    - travis-ci/build-deb-packages.sh
+#    - travis-ci/build-3rdparty.sh Debug
+#    - travis-ci/build-deb-packages.sh Debug
+#    - travis-ci/build-3rdparty.sh Release
+#    - travis-ci/build-deb-packages.sh Release
+
+script:
+    - CI/travis/run-tests.sh 
+
