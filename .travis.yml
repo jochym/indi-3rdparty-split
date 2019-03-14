@@ -2,4 +2,4 @@ services:
   - docker
 
 script:
-  - docker run --rm -it jochym/indi-bionic ./run-build.sh indilib master
+  - docker run --rm -it jochym/indi-build-core:stretch 'git clone https://github.com/jochym/indi-3rdparty.git && cd indi-3rdparty && chmod a+x make_libraries && ./make_libraries'
