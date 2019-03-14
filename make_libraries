@@ -12,6 +12,6 @@ for lib in $LIBS ; do
     cd build_$lib
     cmake -DCMAKE_INSTALL_PREFIX=/usr . ../libs/$lib
     make
-    sudo make install
+    make install
 )
 done
