@@ -3,7 +3,7 @@
 set -x -e
 
 FLAGS="-DCMAKE_INSTALL_PREFIX=/usr/local -DFIX_WARNINGS=ON -DCMAKE_BUILD_TYPE=$1"
-SRC=`dirname $0`/../
+SRC=$(cd "$(dirname "$0")"; cd .. ; pwd -P)
 
 # The build-libs.sh must be run first for this to work
 echo "Building all 3rd party drivers"
