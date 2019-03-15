@@ -4,15 +4,15 @@
 # It is *not* for general audience
 
 LIBS="libapogee libfishcamp libfli libqhy libqsi libsbig"
+SRC=`dirname $0`/../
 
-for libdir in libs/* ; do
-(
-    lib=${libdir%%libs/}
+for libdir in ${SRC}/libs/* ; do
+    lib=`basename ${libdir}`
     echo "Building $lib ..."
-    mkdir build_$lib
-    cd build_$lib
-    cmake -DCMAKE_INSTALL_PREFIX=/usr . ../libs/$lib
+    mkdir -p build/$lib
+    pushd build/$lib
+    cmake -DCMAKE_INSTALL_PREFIX=/usr . ${SRC}/libs/$lib
     make
     make install
-)
+    popd
 done
