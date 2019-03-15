@@ -6,7 +6,7 @@
 [subrepo]
 	remote = git@github.com:jochym/indi-CI.git
 	branch = master
-	commit = adab4b658085c89410e0229826e85ebc72cb113a
-	parent = 9564d226c2815f025c2743d32753abf70a3aaebb
+	commit = c8b75e8447711284f2d0161d92a90385a3fd7bce
+	parent = e2efdcbfc11bb68fbbca3887ca9b6009c16fcf67
 	method = merge
 	cmdver = 0.4.0
