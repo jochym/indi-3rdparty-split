@@ -1,6 +1,32 @@
-language: minimal
-services:
-  - docker
+language: cpp
+os: osx
+env:
+  - BUILD_INSTALL_GTEST=YES
+
+compiler:
+ - gcc
+
+branches:
+  only:
+    - master
+    - develop
+    - package
+    - /drv_.*$/
+    - travis
+    - refactor/unittest
+    - feature/travisosx
+
+before_install:
+    - echo Install dependencies
+    - bash CI/travis/deps-${TRAVIS_OS_NAME}.sh
+    - bash CI/travis/build-core.sh
+    - 
+
+install:
+    - echo Building INDI Core and drivers
+    - bash CI/build-libraries.sh
+    - bash CI/build-all-drivers.sh
 
 script:
-  - docker run --rm -it jochym/indi-build-core:stretch-drv ./run-drivers-build.sh
+    - CI/travis/run-tests.sh 
+
