@@ -1,0 +1,17 @@
+version: 2
+
+jobs:
+  build_stretch:
+    docker:
+      - image: jochym/indi-build-core:stretch-drv
+    steps:
+      - checkout
+      - run:
+          name: Build all
+          command: CI/build-all-drivers.sh
+
+workflows:
+  version: 2
+  build_all:
+    jobs:
+      - build_stretch
