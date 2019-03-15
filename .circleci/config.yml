@@ -8,8 +8,7 @@ jobs:
       - checkout
       - run:
           name: Build all
-          command: bash CI/build-libraries.sh
-          command: bash CI/build-all-drivers.sh
+          command: bash CI/build-libraries.sh && bash CI/build-all-drivers.sh
 
 workflows:
   version: 2
