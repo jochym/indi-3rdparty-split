@@ -19,8 +19,8 @@ branches:
 before_install:
     - echo Install dependencies
     - bash CI/travis/deps-${TRAVIS_OS_NAME}.sh
-    - bash CI/travis/build-core.sh
-    - 
+    - git clone https://github.com/jochym/indi-base.git 
+    - bash indi-base/CI/travis/build-core.sh
 
 install:
     - echo Building INDI Core and drivers
